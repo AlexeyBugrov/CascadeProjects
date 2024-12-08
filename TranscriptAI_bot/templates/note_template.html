@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .metadata {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            margin: 0;
+            padding-left: 20px;
+            color: #666;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    
+    <div class="metadata">
+        <p><strong>Дата создания:</strong> {{ date }}</p>
+        <p><strong>Источник:</strong> {{ source }}</p>
+        {% if duration %}
+        <p><strong>Длительность:</strong> {{ duration }}</p>
+        {% endif %}
+    </div>
+
+    <div class="content">
+        {{ content|safe }}
+    </div>
+
+    <div class="footer">
+        <p>Создано с помощью TranscriptAI Bot</p>
+        <p>© {{ year }} Все права защищены</p>
+    </div>
+</body>
+</html>
